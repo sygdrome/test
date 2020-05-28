@@ -1,0 +1,87 @@
+.cases {
+    position: relative;
+    z-index: 998;
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @include dbg-p;
+        // background-color: rgba(0, 0, 0, 0);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        color: black;
+        background: none;
+        border: none;
+        text-align: left;
+        width: 100%;
+
+    }
+
+    .btn:focus {
+        box-shadow: none;
+    }
+
+    .btn-info:focus {
+        box-shadow: none;
+    }
+
+    .modal-backdrop,
+    .modal-backdrop.fade.in {
+        opacity: 0.1;
+    }
+
+    .modal-dialog {
+        max-width: 55%;
+        top: calc(50% - 300px);
+    }
+
+    @media (max-width: 1024px) {
+        .modal-dialog {
+            max-width: 90%;
+            margin: 1.75rem auto;
+        }
+    }
+
+
+    .modal {
+
+        .modal-content {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7) !important;
+
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                @include dbg-p;
+                // background-color: rgba(0, 0, 0, 0);
+            }
+
+            .modal-header {
+                border-bottom: none;
+            }
+
+            .modal-body {
+                padding-bottom: 10vh;
+            }
+        }
+
+        .close {
+            color: white;
+            opacity: 1;
+        }
+    }
+}

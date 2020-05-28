@@ -1,0 +1,29 @@
+---
+layout: page
+---
+
+    <div class="wrapper otherssay">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                {% for say in site.otherssay %}
+                <div class="row justify-content-sm-center item">
+                    <div class="col-md-4 col-sm-6 imgholder">
+                        <img src="{{ say.image }}" alt="Picture of {{ say.credentials }}">
+                    </div>
+
+                    <div class="col-md-8 col-sm-12 content">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-md-left text-center">
+                                {{ say.content | newline_to_br | markdownify}}
+                            </div>
+    
+                            <div class="credentials col-12 text-md-left text-sm-center">
+                                <p>{{ say.credentials }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>

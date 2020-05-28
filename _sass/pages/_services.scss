@@ -1,0 +1,33 @@
+.services {
+    position: relative;
+    z-index: 999;
+
+    display: flexbox;
+    flex-direction: column !important;
+
+    margin: 80px 2.5vw;
+
+    br {
+        display: none;
+    }
+    span {
+        padding-left: 20px;
+    }
+
+    span p br {
+        display: inline;
+    }
+
+    span p {
+        background: white;
+        display: table;
+    }
+
+    span h1, h2, h3, h4, h5, h6 {
+        background: black;
+        color: white;
+        font-family: "ubuntu-L";
+        display: table;
+        margin-top: 20px;
+    }
+}

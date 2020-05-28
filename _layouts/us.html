@@ -1,0 +1,38 @@
+---
+layout: page
+---
+
+<div class="us">
+    <div class="row">
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="maincontent">
+                <h3 class="title">{{page.test}}</h3>
+                <div class="subtext">{{content}}</div>
+            </div>
+        </div>
+        {% assign ordered_us = site.us | sort: "order" %}
+        {% for u in ordered_us %}
+        <div class="col-xl-4 col-md-6 col-12 u">
+            <a data-backdrop="false" data-toggle="modal"
+                data-target="#{{u.title | split: ' ' | first | remove: ',' }}">
+                <div class="outer-image">
+                <img src="{{ u.image }}" alt="{{u.title}}"><div class="image-text"><p>{{ u.title }}</p></div></div></a>
+
+            <div class="modal fade" id="{{u.title | split: ' ' | first | remove: ','}}" role="dialog">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            {{ u.content | markdownify }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<div style="background-image:url({{ page.bg }})">
+
+</div>
+<div id="bg">
+  {% if page.bg == "" %}
+  <img src="/images/backgrounds/Baggrundsbillede_web.jpg" class="background" alt="background picture"
+    data-proofer-ignore>
+  {% else %}
+  <img src="{{page.bg}}" class="background" alt="background picture" data-proofer-ignore>
+  {% endif %}
+</div>
+<div class="wrapper navigation">
+  <div class="navbar navbar-expand-xl d-block d-lg-none">
+    {% if page.whiteLogo %}
+    <a class="navbar-brand" href="/"><img class="whitelogo" src="/images/logo/TENZIONlogo.svg" alt="Tenzion logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars whitelogo"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto blackmenu">
+        {% assign sorted_nodes = site.pages | sort: "order" %}
+        {% for node in sorted_nodes %}
+        {% if node.show %}
+        <li class="nav-item">
+          <a class="nav-link active-page" href="{{node.url}}">{{ node.title }}</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{node.url}}">{{ node.title }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        <div class="someM whitelogo">{% include components/some.html %}</div>
+      </ul>
+    </div>
+    
+    {% else %}
+    <a class="navbar-brand" href="/"><img src="/images/logo/TENZIONlogo.svg" alt="Tenzion logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      {% assign sorted_nodes = site.pages | sort: "order" %}
+      {% for node in sorted_nodes %}
+      {% if node.show %}
+      <li class="nav-item">
+        <a class="nav-link active-page" href="{{node.url}}">{{ node.title }}</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{node.url}}">{{ node.title }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+      <div class="someM">{% include components/some.html %}</div>
+    </ul>
+  </div>
+    {% endif %}
+  </div>
+
+  <div class="flexcontainer d-none d-lg-block">
+    {% if page.whiteLogo %}
+    <div class="col-lg-2 col-md-5 col-6" style="display: inline-block;"><a href="/"><img class="whitelogo"
+          src="/images/logo/TENZIONlogo.svg" alt="Tenzion logo"></a></div>
+    <div class="someM whitelogo">{% include components/some.html %}</div>
+    {% else %}
+    <div class="col-lg-2 col-md-5 col-6" style="display: inline-block;"><a href="/"><img
+          src="/images/logo/TENZIONlogo.svg" alt="Tenzion logo"></a></div>
+    <div class="someM">{% include components/some.html %}</div>
+    {% endif %}
+    {% include components/navigation.html %}
+  </div>
+</div>
+{{content}}

@@ -1,0 +1,26 @@
+---
+---
+@charset "utf-8";
+
+// Abstracts: The helpfull stuff, like variables and mixins
+
+@import "abstracts/mixins.scss";
+@import "abstracts/variables.scss";
+
+// Components: Styling for all of the components we include
+
+@import "components/bootstrap.scss";
+@import "components/navigation.scss";
+@import "components/some.scss";
+
+// Pages: All of our styling for our individual pages
+@import "pages/frontpage.scss";
+@import "pages/otherssay.scss";
+@import "pages/us.scss";
+@import "pages/services.scss";
+@import "pages/cases.scss";
+
+
+// Miscellaneous: All the stuff we can't define just yet
+
+@import "miscellaneous/global.scss";

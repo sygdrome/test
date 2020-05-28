@@ -1,0 +1,116 @@
+<head>
+
+  <!-- Google Tag Manager -->
+
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NSLZT72');
+  </script>
+
+  <!-- Jekyll invironment variable -->
+
+  {% if jekyll.environment == "production" %}
+  {% assign site_prefix = site.prod_site %}
+  {% else %}
+  {% assign site_prefix = site.stage_site %}
+  {% endif %}
+
+
+  <!-- Meta -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta itemprop="description" name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160 }}{% endif %}" />
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <link data-proofer-ignore rel="canonical" href="{{ site_prefix }}{{ page.url }}">
+
+  <!-- Open Graph tags -->
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta data-proofer-ignore property="og:url" content="{{ site_prefix }}{{ page.url }}">
+  <meta data-proofer-ignore property="og:image" content="{% if page.image %}{{ site_prefix }}{{ page.image | remove: '..' }}{% else %}{{ site_prefix }}{{ site.image }}{% endif %}" />
+  <meta property="og:site_name" content="{{ site.title }}">
+  <!-- <meta property="article:publisher" content="https://www.linkedin.com/company/prolike/" /> -->
+  <!-- <meta property="article:author" content="https://www.linkedin.com/company/prolike/" /> -->
+  <meta property="article:published_time" content="{{ page.date }}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Touch icons -->
+
+
+  <!-- Twitter Card tags -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta data-proofer-ignore name="twitter:image" content="{% if page.image %}{{ site_prefix }}{{ page.image | remove: '..' }}{% else %}{{ site_prefix }}{{ site.image }}{% endif %}">
+  <meta data-proofer-ignore name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta data-proofer-ignore name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Page Title -->
+
+  <title>
+    {% if layout.subpage %}
+    {{page.title}} - {{layout.subpage}} - {{site.title}}
+    {% elsif page.title == "Prolike" %}
+    {{ site.title }}
+    {% else %}
+    {{ page.title }} - {{ site.title }}
+    {% endif %}
+  </title>
+
+
+  <!-- Custom fonts for this template -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/dee0mal.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Favicon -->
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/icons/favicon.ico">
+
+  <!-- Custom styles for this template -->
+
+  <link href="/css/main.css" rel="stylesheet">
+
+  <!-- Feed -->
+
+  <link rel="alternate" title="{{ site.title }}" type="application/json" href="{{ '/feed.json' prepend: site.url }}" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145588327-1"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145588327-1');
+  </script>
+
+  <!-- Plugin JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- gsap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+</head>

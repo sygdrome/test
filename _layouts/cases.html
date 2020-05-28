@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+<div class="container cases">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            {% for case in site.cases %}
+            <button type="button" class="btn" data-backdrop="false" data-toggle="modal"
+                data-target="#{{case.title | split: ' ' | first}}">
+                <h2>{{ case.title }}</h2><img src="{{ case.image }}" alt="{{case.title}}">
+            </button>
+    
+            <div class="modal fade" id="{{case.title | split: ' ' | first}}" role="dialog">
+                <div class="modal-dialog">
+    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>{{ case.title }}</h2>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{ case.content }}</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<nav>
+    <div class="menu">
+        <input type="checkbox" id="toggle" />
+        {% if page.title == "VI"%}
+        <div class="menutext">"<p>{{ page.title }}</p>"</div>
+        {% else %}
+        <div class="menutext"><p>{{ page.title }}</p></div>
+        {% endif %}
+        <label id="show-menu" for="toggle">
+            <div class="btn">
+                <i class="material-icons md-36 toggleBtn menuBtn">menu</i>
+                <i class="material-icons md-36 toggleBtn closeBtn">close</i>
+            </div>
+            {% assign sorted_navi = site.pages | sort: 'order' %}
+            {% for page in sorted_navi %}
+            {% if page.navigation == true %}
+            <a href="{{ page.url }}" class="btn {{ page.size }}">
+                {% if page.title == "Kontakt" %}
+                <i class="fas fa-mobile-alt fa-2x"></i>
+                {% elsif page.title == "VI" %}
+                "{{page.title}}"
+                {% else %}
+                {{ page.title | upcase }}
+                {% endif %}
+            </a>
+            {% endif %}
+            {% endfor %}
+        </label>
+    </div>
+</nav>

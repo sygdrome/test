@@ -1,0 +1,43 @@
+@mixin nav {}
+
+@mixin dbg-p {
+    color: white;
+    padding: 5px;
+    margin-bottom: 10px !important;
+    background-color: black;
+    font-weight: 300;
+ 
+    display: inline; // this is neede so the black or white background only covers where the text is.
+    
+}
+
+@mixin dbg-ul {
+    padding: 5px 0 5px 6px;
+    li {
+        @include dbg-p;
+        display: inline !important;
+        &::after {
+            content: '\A';
+            white-space: pre;
+            margin:5px;
+         }
+    }
+
+  
+
+    li:before {
+        content: '\ffed';
+        margin-right: 0.5em;
+    }
+
+}
+
+@mixin wbg-p {
+    background-color: white;
+    padding: 5px;
+    display: inline; // this is neede so the black or white background only covers where the text is.
+}
+
+@mixin jinky {
+    font-family: "JINKY";
+}
