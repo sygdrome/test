@@ -6,7 +6,7 @@ paginate_path: "/stories/page:num/"
 stage_site: https://stage.tenzion.dk
 prod_site: https://www.tenzion.dk
 url: "https://www.tenzion.dk"
-root: /sygdrome
+root: /stage.tenzion.dk
 future: true
 
 logo: /images/logos/seo_img.png
