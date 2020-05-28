@@ -5,8 +5,9 @@ paginate: 24
 paginate_path: "/stories/page:num/"
 stage_site: https://stage.tenzion.dk
 prod_site: https://www.tenzion.dk
+baseurl: /stage.tenzion.dk
 url: http://sygdrome.github.io
-baseurl: /
+root: /stage.tenzion.dk
 future: true
 
 logo: /images/logos/seo_img.png
