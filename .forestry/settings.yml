@@ -1,0 +1,57 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: 
+webhook_url: 
+sections:
+- type: directory
+  path: _pages
+  label: Sider
+  create: none
+  match: "**/*"
+  exclude: "*.html"
+  templates:
+  - sider
+- type: directory
+  path: _us
+  label: Vi
+  create: all
+  match: "**/*"
+  templates:
+  - os
+- type: directory
+  path: _some
+  label: SoMe
+  create: all
+  match: "**/*"
+  templates:
+  - some
+- type: directory
+  path: _cases
+  label: Cases
+  create: all
+  match: "**/*"
+  templates:
+  - cases
+- type: directory
+  path: _otherssay
+  label: Andre siger
+  create: all
+  match: "**/*"
+  templates:
+  - otherssay
+upload_dir: uploads
+public_path: "/uploads"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"
+build:
+  preview_env:
+  - JEKYLL_ENV=staging
+  preview_output_directory: "//app/_site"
+  install_dependencies_command: bundle install --path vendor/bundle
+  preview_docker_image: carolineolivia94/jekyll-plus-plus
+  mount_path: "//app"
+  working_dir: "//app"
+  instant_preview_command: jekyll serve --drafts --unpublished --future --port 8080
+    --host 0.0.0.0 -d _site --watch

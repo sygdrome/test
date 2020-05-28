@@ -1,0 +1,16 @@
+---
+label: SoMe
+hide_body: true
+fields:
+- name: icon
+  type: text
+  config:
+    required: false
+  label: Icon
+  description: 'Ikonet til social media. Du kan finde flere her: https://fontawesome.com/icons?d=gallery&m=free'
+- name: link
+  type: text
+  config:
+    required: false
+  label: Link
+  description: social media link

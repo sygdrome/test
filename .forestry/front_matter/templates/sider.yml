@@ -1,0 +1,39 @@
+---
+label: Sider
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+  default: page
+- type: boolean
+  name: navigation
+  label: show
+- type: text
+  name: title
+  label: title
+- type: number
+  name: order
+  label: order
+- type: file
+  name: image
+  label: background image
+- name: size
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - small
+    - medium
+    - large
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: size
+- type: boolean
+  name: whiteLogo
+  label: Om der logo og ikoner skal være sorte eller hvide.

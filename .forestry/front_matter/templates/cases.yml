@@ -1,0 +1,14 @@
+---
+label: Cases
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: image
+  type: file
+  config:
+    maxSize: 250
+  label: image

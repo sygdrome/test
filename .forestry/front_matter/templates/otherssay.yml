@@ -1,0 +1,14 @@
+---
+label: Others say
+hide_body: false
+fields:
+- name: credentials
+  type: text
+  config:
+    required: false
+  label: credentials
+- name: image
+  type: file
+  config:
+    maxSize: 250
+  label: image
